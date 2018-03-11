@@ -33,7 +33,7 @@ Route::get('/test', function() {
 });
 
 Route::group(['prefix' => 'user', 'namespace' => 'User'], function ($router) {
-    $router->post('login', 'LoginController@login');
+    $router->get('login', 'LoginController@login');
 });
 
 Auth::routes();
