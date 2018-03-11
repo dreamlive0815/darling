@@ -11,12 +11,29 @@
 |
 */
 
-Route::get('foo', function () {
-    return 'Hello World';
-});
-
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/test', function() {
+    $client = new \GuzzleHttp\Client();
+    try{
+    $response = $client->request('POST', 'http://laravel/index.php', [ 'form_params' => [
+        'X-CSRF-TOKEN' => csrf_token(),
+        
+    ]]);
+    print_r( $response );
+    }catch(\GuzzleHttp\Exception\RequestException $e) {
+        
+        if ($e->hasResponse()) {
+            print_r( $e->getResponse() );
+        }
+    }
+    
+});
+
+Route::group(['prefix' => 'user', 'namespace' => 'User'], function ($router) {
+    $router->post('login', 'LoginController@login');
 });
 
 Auth::routes();
