@@ -21,26 +21,27 @@ Route::get('/status', function () {
 
 Route::get('/test', function() {
     $jar = new \GuzzleHttp\Cookie\CookieJar();
-    $client = new \GuzzleHttp\Client(['base_uri' => 'http://laravel', 'cookies' => $jar]);
-    $response = null;
+    $client = new \GuzzleHttp\Client(['base_uri' => env('APP_URL'), 'cookies' => $jar]);
     try{
-    $response = $client->request('GET', '/status');
-    $body = $response->getBody();
-    $content = $body->getContents();
-    $data = json_decode($content, true);
-    $response = $client->request('POST', '/user/logout', [ 
-        'form_params' => array_merge($data, [
-            'username' => '995928339@qq.com',
-            'password' => 'yu19960815'
-        ]),
-        'headers' => [
-        ],
-        'cookies' => $jar,
-    ]);
+        $response = $client->request('GET', '/status');
+        $body = $response->getBody();
+        $content = $body->getContents();
+        $data = json_decode($content, true);
+        $response = $client->request('POST', '/user/login', [ 
+            'form_params' => array_merge($data, [
+               'username' => '995928339@qq.com',
+               'password' => 'yu19960815'
+            ]),
+            'headers' => [
+            ],
+            'cookies' => $jar,
+        ]);
+        //return $response->getBody();
     }catch(\GuzzleHttp\Exception\RequestException $e) {
         
         if ($e->hasResponse()) {
             $response = $e->getResponse();
+            //return $response->getBody();
         }
     }
     $body = $response->getBody();
