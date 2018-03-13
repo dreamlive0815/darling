@@ -19,7 +19,7 @@ class AjaxAuthenticate
     public function handle($request, Closure $next, $guard = null)
     {
         if (!Auth::guard($guard)->check()) {
-            return response()->json($this->buildFailedJson(2, '登录态已失效,请重新登录'));
+            return $this->buildFailedJson(2, '登录态已失效,请重新登录');
         }
 
         return $next($request);

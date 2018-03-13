@@ -15,25 +15,46 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/status', function () {
+    return ['_token' => csrf_token()];
+});
+
 Route::get('/test', function() {
-    $client = new \GuzzleHttp\Client();
+    $jar = new \GuzzleHttp\Cookie\CookieJar();
+    $client = new \GuzzleHttp\Client(['base_uri' => 'http://laravel', 'cookies' => $jar]);
+    $response = null;
     try{
-    $response = $client->request('POST', 'http://laravel/index.php', [ 'form_params' => [
-        'X-CSRF-TOKEN' => csrf_token(),
-        
-    ]]);
-    print_r( $response );
+    $response = $client->request('GET', '/status');
+    $body = $response->getBody();
+    $content = $body->getContents();
+    $data = json_decode($content, true);
+    $response = $client->request('POST', '/user/logout', [ 
+        'form_params' => array_merge($data, [
+            'username' => '995928339@qq.com',
+            'password' => 'yu19960815'
+        ]),
+        'headers' => [
+        ],
+        'cookies' => $jar,
+    ]);
     }catch(\GuzzleHttp\Exception\RequestException $e) {
         
         if ($e->hasResponse()) {
-            print_r( $e->getResponse() );
+            $response = $e->getResponse();
         }
     }
+    $body = $response->getBody();
+    $content = $body->getContents();
+    $data = json_decode($content, true);
+    print_r( $data ? $data : $content );
+
+
     
 });
 
 Route::group(['prefix' => 'user', 'namespace' => 'User'], function ($router) {
-    $router->get('login', 'LoginController@login');
+    $router->post('login', 'LoginController@login');
+    $router->post('logout', 'LoginController@logout');
 });
 
 Auth::routes();

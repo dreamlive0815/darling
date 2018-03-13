@@ -8,11 +8,11 @@ trait Ajax
 {
     public function buildJson($code, $message, $data)
     {
-        return [
+        return response()->json([
             'errorCode' => $code,
             'errorMsg' => $message,
             'data' => $data
-        ];
+        ]);
     }
 
     public function buildSucceededJson($data)
