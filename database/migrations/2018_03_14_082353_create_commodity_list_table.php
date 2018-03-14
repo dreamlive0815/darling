@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserRelationship extends Migration
+class CreateCommodityListTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,12 +14,11 @@ class CreateUserRelationship extends Migration
     public function up()
     {
         //
-        Schema::create('user_relationship', function (Blueprint $table) {
+        Schema::create('commodity_list', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
-            $table->integer('target_user_id');
-            $table->integer('type');
-            $table->timestamps();
+            $table->integer('order_id');
+            $table->integer('commodity_id');
+            $table->integer('count');
         });
     }
 
@@ -31,6 +30,6 @@ class CreateUserRelationship extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('user_relationship');
+        Schema::dropIfExists('commodity_list');
     }
 }

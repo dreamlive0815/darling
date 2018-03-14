@@ -19,6 +19,7 @@ class CreateSellersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('nickname')->nullable();
+            $table->string('tel')->nullable();
             $table->string('address')->nullable();
             $table->string('description')->nullable();
             $table->integer('state')->nullable();
