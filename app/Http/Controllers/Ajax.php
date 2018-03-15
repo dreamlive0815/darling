@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Closure;
+use Symfony\Component\HttpFoundation\Response;
 
 trait Ajax
 {
@@ -10,14 +11,14 @@ trait Ajax
     {
         return response()->json([
             'errorCode' => $code,
-            'errorMsg' => $message,
+            'message' => $message,
             'data' => $data
         ]);
     }
 
-    public function buildSucceededJson($data)
+    public function buildSucceededJson($data, $message = null)
     {
-        return $this->buildJson(0, null, $data);
+        return $this->buildJson(0, $message, $data);
     }
 
     public function buildFailedJson($code, $message)
@@ -29,6 +30,7 @@ trait Ajax
     {
         try {
             $ret = $callback($this);
+            if($ret instanceof Response) return $ret;
             return $this->buildSucceededJson($ret);
         } catch(\Exception $ex) {
             $code = $ex->getCode();

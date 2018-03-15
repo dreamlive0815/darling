@@ -18,5 +18,7 @@ return [
 
     'authenticated' => 'You have already logged in',
     'expired' => 'You login status has expired, please log in again',
+    'logged_in' => 'You are logged in!',
+    'logged_out' => 'You are logged out!',
 
 ];

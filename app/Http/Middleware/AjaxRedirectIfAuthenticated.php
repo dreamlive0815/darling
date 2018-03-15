@@ -13,7 +13,7 @@ class AjaxRedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
-            return $this->buildSucceededJson(['message' => trans('auth.authenticated')]);
+            return $this->buildSucceededJson(null, trans('auth.authenticated'));
         }
 
         return $next($request);

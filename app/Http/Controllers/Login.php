@@ -27,7 +27,7 @@ trait Login
             if ($this->attemptLogin($request)) {
                 $request->session()->regenerate();
                 $this->clearLoginAttempts($request);
-                return $this->guard()->user();
+                return $this->buildSucceededJson(null, trans('auth.logged_in'));
             }
             
             $this->incrementLoginAttempts($request);
@@ -40,7 +40,7 @@ trait Login
         return $this->buildFinalJson( function ($that) use($request) {
             $this->guard()->logout();
             $request->session()->invalidate();
-            return ['message' => '你已成功登出'];
+            return $this->buildSucceededJson(null, trans('auth.logged_out'));
         });
     }
 

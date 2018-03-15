@@ -11,11 +11,15 @@
 |
 */
 
+Route::get('/my', function () {
+    
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/status', function () {
+Route::get('/token', function () {
     return ['_token' => csrf_token()];
 });
 
@@ -23,25 +27,24 @@ Route::get('/test', function() {
     $jar = new \GuzzleHttp\Cookie\CookieJar();
     $client = new \GuzzleHttp\Client(['base_uri' => env('APP_URL'), 'cookies' => $jar]);
     try{
-        $response = $client->request('GET', '/status');
+        $response = $client->request('GET', '/token');
         $body = $response->getBody();
         $content = $body->getContents();
         $data = json_decode($content, true);
-        $response = $client->request('POST', '/user/login', [ 
+        $response = $client->request('POST', '/seller/login', [ 
             'form_params' => array_merge($data, [
-               'username' => '995928339@qq.com',
+               'username' => '1113704512@qq.com',
                'password' => 'yu19960815'
             ]),
             'headers' => [
             ],
             'cookies' => $jar,
         ]);
-        //return $response->getBody();
+        $response = $client->request('GET', '/seller/profile');
     }catch(\GuzzleHttp\Exception\RequestException $e) {
         
         if ($e->hasResponse()) {
             $response = $e->getResponse();
-            //return $response->getBody();
         }
     }
     $body = $response->getBody();
@@ -56,6 +59,13 @@ Route::get('/test', function() {
 Route::group(['prefix' => 'user', 'namespace' => 'User'], function ($router) {
     $router->post('login', 'LoginController@login')->middleware('auth.ajax.redirect');
     $router->post('logout', 'LoginController@logout');
+    $router->get('profile', 'ProfileController@getProfile');
+});
+
+Route::group(['prefix' => 'seller', 'namespace' => 'Seller'], function ($router) {
+    $router->post('login', 'LoginController@login')->middleware('auth.ajax.redirect:seller');
+    $router->post('logout', 'LoginController@logout');
+    $router->get('profile', 'ProfileController@getProfile');
 });
 
 Auth::routes();
