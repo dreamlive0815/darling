@@ -20,4 +20,6 @@ return [
     'expired' => '登录态已过期,请重新登录',
     'logged_in' => '登录成功',
     'logged_out' => '你已成功登出',
+    'registered' => '注册成功',
+    
 ];

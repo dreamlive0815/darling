@@ -31,16 +31,18 @@ Route::get('/test', function() {
         $body = $response->getBody();
         $content = $body->getContents();
         $data = json_decode($content, true);
-        $response = $client->request('POST', '/seller/login', [ 
+        $response = $client->request('POST', '/user/register', [ 
             'form_params' => array_merge($data, [
-               'username' => '1113704512@qq.com',
-               'password' => 'yu19960815'
+               'email' => '995928339@163.com',
+               'password' => 'yu19960815',
+               'password_confirmation' => 'yu19960815',
+               'name' => 'DreamLive0815',
             ]),
             'headers' => [
             ],
             'cookies' => $jar,
         ]);
-        $response = $client->request('GET', '/seller/profile');
+        //$response = $client->request('GET', '/user/profile');
     }catch(\GuzzleHttp\Exception\RequestException $e) {
         
         if ($e->hasResponse()) {
@@ -51,7 +53,11 @@ Route::get('/test', function() {
     $content = $body->getContents();
     $data = json_decode($content, true);
     print_r( $data ? $data : $content );
-
+    if($data)
+    {
+        $msg = json_decode($data['message'], true);
+        print_r($msg);
+    }
 
     
 });
@@ -59,6 +65,7 @@ Route::get('/test', function() {
 Route::group(['prefix' => 'user', 'namespace' => 'User'], function ($router) {
     $router->post('login', 'LoginController@login')->middleware('auth.ajax.redirect');
     $router->post('logout', 'LoginController@logout');
+    $router->post('register', 'RegisterController@register');
     $router->get('profile', 'ProfileController@getProfile');
 });
 

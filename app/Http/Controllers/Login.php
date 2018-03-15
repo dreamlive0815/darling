@@ -53,8 +53,8 @@ trait Login
 
         if($validator->fails())
         {
-            $errors = $validator->errors();
-            throw new \Exception(implode('|', $errors->all()));
+            $errors = $validator->errors()->toArray();
+            throw new \Exception(json_encode($errors));
         }
     }
 
