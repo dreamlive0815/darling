@@ -54,7 +54,7 @@ Route::get('/test', function() {
 });
 
 Route::group(['prefix' => 'user', 'namespace' => 'User'], function ($router) {
-    $router->post('login', 'LoginController@login');
+    $router->post('login', 'LoginController@login')->middleware('auth.ajax.redirect');
     $router->post('logout', 'LoginController@logout');
 });
 

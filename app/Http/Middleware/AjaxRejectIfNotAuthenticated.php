@@ -3,10 +3,10 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use App\Http\Controllers\Ajax;
 use Illuminate\Support\Facades\Auth;
-use \App\Http\Controllers\Ajax;
 
-class AjaxAuthenticate
+class AjaxRejectIfNotAuthenticated
 {
     use Ajax;
     /**
@@ -19,7 +19,7 @@ class AjaxAuthenticate
     public function handle($request, Closure $next, $guard = null)
     {
         if (!Auth::guard($guard)->check()) {
-            return $this->buildFailedJson(2, '登录态已失效,请重新登录');
+            return $this->buildFailedJson(2, trans('auth.expired'));
         }
 
         return $next($request);

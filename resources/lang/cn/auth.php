@@ -14,6 +14,8 @@ return [
     */
 
     'failed' => '账号信息有误,认证失败',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'throttle' => '登录过于频繁,请在:seconds秒后重新尝试',
 
+    'authenticated' => '你已登入',
+    'expired' => '登录态已过期,请重新登录',
 ];
