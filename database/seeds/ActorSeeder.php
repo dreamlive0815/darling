@@ -2,6 +2,7 @@
 
 use App\User;
 use App\Seller;
+use App\Admin;
 use Illuminate\Database\Seeder;
 
 class ActorSeeder extends Seeder
@@ -21,6 +22,10 @@ class ActorSeeder extends Seeder
         Seller::updateOrCreate(
             ['name' => 'Koishi', 'email' => '1113704512@qq.com'],
             ['password' => bcrypt('yu19960815')]
+        );
+        Admin::updateOrCreate(
+            ['name' => 'root', 'email' => '995928339@qq.com'],
+            ['password' => bcrypt('kirisame')]
         );
     }
 }

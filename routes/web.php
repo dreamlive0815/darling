@@ -31,18 +31,19 @@ Route::get('/test', function() {
         $body = $response->getBody();
         $content = $body->getContents();
         $data = json_decode($content, true);
-        $response = $client->request('POST', '/user/register', [ 
+        $response = $client->request('POST', '/admin/login', [ 
             'form_params' => array_merge($data, [
-               'email' => '1113704512@163.com',
-               'password' => 'yu19960815',
-               'password_confirmation' => 'yu19960815',
-               'name' => 'Stone_Koishi',
+                'username' => 'root',
+                'email' => '1113704512@163.com',
+                'password' => 'kirisame',
+                'password_confirmation' => 'yu19960815',
+                'name' => 'Stone_Koishi',
             ]),
             'headers' => [
             ],
             'cookies' => $jar,
         ]);
-        //$response = $client->request('GET', '/user/profile');
+        $response = $client->request('GET', '/admin/profile');
     }catch(\GuzzleHttp\Exception\RequestException $e) {
         
         if ($e->hasResponse()) {
@@ -73,6 +74,12 @@ Route::group(['prefix' => 'seller', 'namespace' => 'Seller'], function ($router)
     $router->post('login', 'LoginController@login')->middleware('auth.ajax.redirect:seller');
     $router->post('logout', 'LoginController@logout');
     $router->post('register', 'RegisterController@register');
+    $router->get('profile', 'ProfileController@getProfile');
+});
+
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function ($router) {
+    $router->post('login', 'LoginController@login')->middleware('auth.ajax.redirect:admin');
+    $router->post('logout', 'LoginController@logout');
     $router->get('profile', 'ProfileController@getProfile');
 });
 
