@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers\Seller;
 
-use App\User;
+use App\Seller;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Register;
 use App\Http\Controllers\Controller;
@@ -12,7 +12,7 @@ class RegisterController extends Controller
 {
     use Register;
 
-    private $table = 'users';
+    private $table = 'sellers';
 
     public function __construct(Request $request)
     {
@@ -21,7 +21,7 @@ class RegisterController extends Controller
 
     protected function create(array $data)
     {
-        return User::create([
+        return Seller::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),

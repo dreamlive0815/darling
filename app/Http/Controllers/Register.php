@@ -12,8 +12,6 @@ trait Register
 {
     use Ajax;
 
-    private $table = 'users';
-
     protected function validateRegister(Request $request)
     {
         $table = $this->table;

@@ -33,10 +33,10 @@ Route::get('/test', function() {
         $data = json_decode($content, true);
         $response = $client->request('POST', '/user/register', [ 
             'form_params' => array_merge($data, [
-               'email' => '995928339@163.com',
+               'email' => '1113704512@163.com',
                'password' => 'yu19960815',
                'password_confirmation' => 'yu19960815',
-               'name' => 'DreamLive0815',
+               'name' => 'Stone_Koishi',
             ]),
             'headers' => [
             ],
@@ -72,6 +72,7 @@ Route::group(['prefix' => 'user', 'namespace' => 'User'], function ($router) {
 Route::group(['prefix' => 'seller', 'namespace' => 'Seller'], function ($router) {
     $router->post('login', 'LoginController@login')->middleware('auth.ajax.redirect:seller');
     $router->post('logout', 'LoginController@logout');
+    $router->post('register', 'RegisterController@register');
     $router->get('profile', 'ProfileController@getProfile');
 });
 
