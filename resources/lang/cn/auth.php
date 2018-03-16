@@ -21,5 +21,6 @@ return [
     'logged_in' => '登录成功',
     'logged_out' => '你已成功登出',
     'registered' => '注册成功',
+    'password_modified' => '你已成功修改密码',
     
 ];

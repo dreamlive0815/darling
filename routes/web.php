@@ -31,11 +31,12 @@ Route::get('/test', function() {
         $body = $response->getBody();
         $content = $body->getContents();
         $data = json_decode($content, true);
-        $response = $client->request('POST', '/admin/login', [ 
+        $type = 'user';
+        $response = $client->request('POST', "/{$type}/login", [ 
             'form_params' => array_merge($data, [
-                'username' => 'root',
+                'username' => 'DreamLive',
                 'email' => '1113704512@163.com',
-                'password' => 'kirisame',
+                'password' => 'yu19960815',
                 'password_confirmation' => 'yu19960815',
                 'name' => 'Stone_Koishi',
             ]),
@@ -43,7 +44,19 @@ Route::get('/test', function() {
             ],
             'cookies' => $jar,
         ]);
-        $response = $client->request('GET', '/admin/profile');
+        $response = $client->request('POST', "/{$type}/modifypassword", [ 
+            'form_params' => array_merge($data, [
+                'username' => 'root',
+                'email' => '1113704512@163.com',
+                'password' => '19960815',
+                'password_confirmation' => '19960815',
+                'name' => 'Stone_Koishi',
+            ]),
+            'headers' => [
+            ],
+            'cookies' => $jar,
+        ]);
+        
     }catch(\GuzzleHttp\Exception\RequestException $e) {
         
         if ($e->hasResponse()) {
@@ -68,6 +81,7 @@ Route::group(['prefix' => 'user', 'namespace' => 'User'], function ($router) {
     $router->post('logout', 'LoginController@logout');
     $router->post('register', 'RegisterController@register');
     $router->get('profile', 'ProfileController@getProfile');
+    $router->post('modifypassword', 'ProfileController@modifyPassword');
 });
 
 Route::group(['prefix' => 'seller', 'namespace' => 'Seller'], function ($router) {
@@ -75,12 +89,14 @@ Route::group(['prefix' => 'seller', 'namespace' => 'Seller'], function ($router)
     $router->post('logout', 'LoginController@logout');
     $router->post('register', 'RegisterController@register');
     $router->get('profile', 'ProfileController@getProfile');
+    $router->post('modifypassword', 'ProfileController@modifyPassword');
 });
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function ($router) {
     $router->post('login', 'LoginController@login')->middleware('auth.ajax.redirect:admin');
     $router->post('logout', 'LoginController@logout');
     $router->get('profile', 'ProfileController@getProfile');
+    $router->post('modifypassword', 'ProfileController@modifyPassword');
 });
 
 Auth::routes();
