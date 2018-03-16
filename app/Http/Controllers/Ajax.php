@@ -30,13 +30,18 @@ trait Ajax
     {
         try {
             $ret = $callback($this);
-            if($ret instanceof Response) return $ret;
+            if($this->isResponseInstance($ret)) return $ret;
             return $this->buildSucceededJson($ret);
         } catch(\Exception $ex) {
             $code = $ex->getCode();
             $code = $code ? $code : 1;
             return $this->buildFailedJson($code, $ex->getMessage());
         }
+    }
+
+    public function isResponseInstance($v)
+    {
+        return $v instanceof Response;
     }
 
 }
