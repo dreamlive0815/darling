@@ -24,7 +24,7 @@ class CreateOrdersTable extends Migration
             $table->string('note_for_carrier')->nullable();
             $table->timestamp('complete_before')->nullable();
             $table->integer('carrier_status_id')->nullable();
-            $table->string('status');
+            $table->string('status')->default('unsend');
             $table->timestamps();
         });
     }
