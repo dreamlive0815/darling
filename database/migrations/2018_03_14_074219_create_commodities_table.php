@@ -19,8 +19,10 @@ class CreateCommoditiesTable extends Migration
             $table->integer('seller_id');
             $table->string('name');
             $table->float('price');
+            $table->float('weight')->nullable();
             $table->string('image')->nullable();
             $table->string('description')->nullable();
+            $table->string('state')->default('sale');
             $table->timestamps();
         });
     }

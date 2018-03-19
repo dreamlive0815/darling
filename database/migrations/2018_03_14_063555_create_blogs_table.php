@@ -19,7 +19,7 @@ class CreateBlogsTable extends Migration
             $table->integer('user_id');
             $table->string('title');
             $table->string('body');
-            $table->integer('status')->default(1);
+            $table->string('state')->default('unpublish');
             $table->timestamps();
         });
     }

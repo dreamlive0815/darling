@@ -28,16 +28,12 @@ class OrderSeeder extends Seeder
             $order = Order::create([
                 'seller_id' => $seller_id,
                 'sender_id' => $user_id,
+                'sender_type' => 'user',
                 'sender_address' => '地点' . mt_rand(0, 100),
+                'sender_tel' => '158690' . mt_rand(10000, 99999),
                 'receiver_address' => '地点' . mt_rand(0, 100),
                 'receiver_tel' => '158690' . mt_rand(10000, 99999),
                 'reward_for_carrier' => mt_rand(50, 100),
-            ]);
-
-            if($i < 1) continue;
-            CarrierStatus::create([
-                'user_id' => $user_id,
-                'want_order_id' => $order->id,
             ]);
         }
 
