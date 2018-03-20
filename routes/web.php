@@ -12,6 +12,27 @@
 */
 
 Route::get('/my', function () {
+    $user = \App\User::find(1);
+    $orders = $user->sentorders;
+    //$order = \App\Model\Order::find(1);
+    //$user = $order->sender;
+    print_r($user->toArray());
+    //print_r($user);
+    /*
+    $newOrder = new \App\Model\Order([
+        'seller_id' => 1,
+        'sender_address' => '地点' . mt_rand(0, 100),
+        'sender_tel' => '158690' . mt_rand(10000, 99999),
+        'receiver_address' => '地点' . mt_rand(0, 100),
+        'receiver_tel' => '158690' . mt_rand(10000, 99999),
+        'reward_for_carrier' => mt_rand(50, 100),
+    ]);
+    $user->sentorders()->save($newOrder);
+    */
+    /*
+    $orders = $user->sentorders;
+    print_r($orders);
+    */
     
 });
 
