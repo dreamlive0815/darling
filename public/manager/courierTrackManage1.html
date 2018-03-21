@@ -1,0 +1,430 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>达邻-跑腿人轨迹管理</title>
+
+    <!-- Bootstrap -->
+    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!-- Datatables -->
+    <link href="../vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="../vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+    <link href="../vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+    <link href="../vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+    <link href="../vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="../build/css/custom.min.css" rel="stylesheet">
+	<!-- 鹰眼 -->
+	<meta name="keywords" content="百度地图鹰眼,鹰眼,轨迹,大数据位置,位置智能" />
+    <meta name="description" content="百度鹰眼，来自百度LBS开放平台，打造最专业的位置轨迹大数据服务平台。" />
+	<link rel="shortcut icon" href="http://api.map.baidu.com/favicon.ico">
+    <link href="static/css/track.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/fontawesome/css/font-awesome.min.css" type="text/css">
+    <link href="static/css/jquery.datetimepicker.css" rel="stylesheet" type="text/css">
+    <link href="static/css/pagination.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=wWy2A8K94nhntYTYUHS19RXW"></script>
+    <script type="text/javascript" src="static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.datetimepicker.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="static/js/jquery.pagination.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="static/js/mousewheel.min.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="static/js/baiduTemplate.js"></script>
+    <script type="text/javascript" src="static/js/esl/esl.js"></script>
+    <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+	
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="index.html" class="site_title"><img src="images\1.png" alt=""> <span>达邻</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+        
+            <!-- /menu profile quick info -->
+
+            <br />
+
+       <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <!--<h3>General</h3>-->
+                <ul class="nav side-menu">
+                  <li><a  href="index.html"><i class="fa fa-home"></i> 首页 </a>
+                    <ul class="nav child_menu">
+                      
+                    </ul>
+                  </li>
+                  <li><a  href="businessManage.html"><i class="fa fa-home"></i> 商家管理 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="businessManage.html">商家信息管理</a></li>
+                      <li><a href="orderWithBusiness.html">商家订单管理</a></li>
+                      <li><a href="businessSettled.html">商家入驻申请</a></li>
+                      <li><a href="feedBackBusiness.html">商家反馈申请</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-edit"></i> 用户信息管理 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="systemManage.html">系统管理</a></li>
+                      <li><a href="userManage.html">用户管理</a></li>              
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-desktop"></i> 基本业务管理 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                          <li><a>订单管理<span class="fa fa-chevron-down"></span></a>
+                          <ul class="nav child_menu">
+                            <li class="sub_menu"><a href="orderUserThree.html">普通订单管理</a>
+                            </li>
+                            <li><a href="orderOnlySend.html">寄件订单管理</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li><a href="friendlyMessageManage.html">动态管理</a></li>
+                        <li><a href="groupPurchasingManage.html">团购管理</a></li> 
+                        <li><a href="recruitManage.html">招募管理</a></li> 
+                        <li><a href="postManage.html">跑腿人申请管理</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-table"></i> 反馈信息管理 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="feedBackUser.html">用户反馈管理</a></li>
+                      <li><a href="reportManage.html">报表管理</a></li>
+                      <li><a href="courierTrackManage.html">跑腿人轨迹管理</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-bar-chart-o"></i> 拓展模块 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="chargingRules.html">收费细则</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+            <div class="sidebar-footer hidden-small">
+              <a data-toggle="tooltip" data-placement="top" title="Settings">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Lock">
+                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+              </a>
+            </div>
+            <!-- /menu footer buttons -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+          <div class="nav_menu">
+            <nav>
+              <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+              </div>
+
+              <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <img src="images/img.jpg" alt="">超级管理员
+                    <span class=" fa fa-angle-down"></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-usermenu pull-right">
+                    <li><a href="javascript:;"> Profile</a></li>
+                    <li>
+                      <a href="javascript:;">
+                        <span class="badge bg-red pull-right">50%</span>
+                        <span>Settings</span>
+                      </a>
+                    </li>
+                    <li><a href="javascript:;">Help</a></li>
+                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                  </ul>
+                </li>
+
+                <li role="presentation" class="dropdown">
+                  <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-envelope-o"></i>
+                    <span class="badge bg-green"></span>
+                  </a>
+      <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                    <li>
+                      <div class="text-center">
+                        <a>
+                          <strong>暂无消息</strong>
+                          <i class="fa fa-angle-right"></i>
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              
+
+              <!-- <div class="title_right"> -->
+                <!-- <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search"> -->
+                  <!-- <div class="input-group"> -->
+                    <!-- <input type="text" class="form-control" placeholder="Search for..."> -->
+                    <!-- <span class="input-group-btn"> -->
+                      <!-- <button class="btn btn-default" type="button">Go!</button> -->
+                    <!-- </span> -->
+                  <!-- </div> -->
+                <!-- </div> -->
+              <!-- </div> -->
+            </div>
+            <div class="clearfix"></div>
+           
+		   
+		   <div id="content">
+				
+				
+              	
+				
+			</div>
+		   
+          </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+  
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="../vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="../vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="../vendors/nprogress/nprogress.js"></script>
+    <!-- iCheck -->
+    <script src="../vendors/iCheck/icheck.min.js"></script>
+    <!-- Datatables -->
+    <script src="../vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="../vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="../vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="../vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    <script src="../vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="../vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="../vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="../vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+    <script src="../vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+    <script src="../vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="../vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <script src="../vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+    <script src="../vendors/jszip/dist/jszip.min.js"></script>
+    <script src="../vendors/pdfmake/build/pdfmake.min.js"></script>
+    <script src="../vendors/pdfmake/build/vfs_fonts.js"></script>
+	
+	</script> 
+    <!-- Custom Theme Scripts -->
+    <script src="../build/js/custom.min.js"></script>
+
+	
+	
+	
+	
+	<!-- 以下轨迹 -->
+	<script type="text/html" id="tracklist-tmpl">
+        <ul class="tracks-ul">
+            <%for(var i=0; i<size; i++) { %>
+                <li data-id="<%=trackList[i].entity_name%>" data-name="<%=trackList[i].entity_name%>" data-state="<%=trackList[i].state%>">
+                    <%if(trackList[i].checked) { %>
+                        <input type="checkbox" class="cbtest" checked="checked" id="cbtest_<%=trackList[i].entity_name%>" />
+                        <% } else { %>
+                            <input type="checkbox" class="cbtest" id="cbtest_<%=trackList[i].entity_name%>" />
+                            <% } %>
+                                <label for="cbtest_<%=trackList[i].entity_name%>" class="check-box"></label>
+                                <span class="state <%=trackList[i].state%>" title="<%=trackList[i].stateTxt%>"></span>
+                                <span><%=trackList[i].entity_name%></span>
+                </li>
+                <% } %>
+        </ul>
+    </script>
+    <script type="text/html" id="sel-tracklist-tmpl">
+        <ul class="seled-tracks-ul">
+            <%for(var i=0; i<size; i++) { %>
+                <li class="seled-track" id="seled-track-<%=trackList[i].entity_name%>" data-id="<%=trackList[i].entity_name%>" data-name="<%=trackList[i].entity_name%>">
+                    <%if(trackList[i].checked) { %>
+                        <input type="checkbox" class="cbtest" checked="checked" id="cbtest2_<%=trackList[i].entity_name%>" />
+                    <% } else { %>
+                        <input type="checkbox" class="cbtest" id="cbtest2_<%=trackList[i].entity_name%>" />
+                    <% } %>
+                    <label for="cbtest2_<%=trackList[i].entity_name%>" class="check-box"></label>
+                    <span class="sel-track-name"><%=trackList[i].entity_name%></span>
+                    <span class="pro-bar" style="background-color: <%=trackList[i].barBgColor%>"><span class="bar"></span></span>
+                    <span class="process play" title="回放轨迹" data-id="<%=trackList[i].entity_name%>"><i class="fa fa-play"></i></span>
+                </li>
+                <% } %>
+        </ul>
+    </script>
+    <script type="text/javascript" src="static/js/track/demo.js"></script>
+    <script type="text/javascript" src="static/js/demoTrack.js"></script>
+    <script type="text/javascript">
+    var map = new BMap.Map("mapContainer", {
+        // 关闭底图可点功能
+        enableMapClick: false
+    });
+    function mapInit() {
+        var point = new BMap.Point(116.404, 39.915);
+        map.centerAndZoom(point, 12);
+    }
+    mapInit();
+    // 设置酷黑个性化地图
+    map.setMapStyle({
+        styleJson: [{
+            featureType: "land",
+            elementType: "geometry",
+            stylers: {
+                color: "#212121"
+            }
+        }, {
+            featureType: "building",
+            elementType: "geometry",
+            stylers: {
+                color: "#2b2b2b"
+            }
+        }, {
+            featureType: "highway",
+            elementType: "all",
+            stylers: {
+                lightness: -42,
+                saturation: -91
+            }
+        }, {
+            featureType: "arterial",
+            elementType: "geometry",
+            stylers: {
+                lightness: -77,
+                saturation: -94
+            }
+        }, {
+            featureType: "green",
+            elementType: "geometry",
+            stylers: {
+                color: "#1b1b1b"
+            }
+        }, {
+            featureType: "water",
+            elementType: "geometry",
+            stylers: {
+                color: "#181818"
+            }
+        }, {
+            featureType: "subway",
+            elementType: "geometry.stroke",
+            stylers: {
+                color: "#181818"
+            }
+        }, {
+            featureType: "railway",
+            elementType: "geometry",
+            stylers: {
+                lightness: -52,
+                visibility: "off"
+            }
+        }, {
+            featureType: "railway",
+            elementType: "all",
+            stylers: {
+                visibility: "off"
+            }
+        }, {
+            featureType: "subway",
+            elementType: "all",
+            stylers: {
+                visibility: "off"
+            }
+        }, {
+            featureType: "all",
+            elementType: "labels.text.stroke",
+            stylers: {
+                color: "#313131"
+            }
+        }, {
+            featureType: "all",
+            elementType: "labels.text.fill",
+            stylers: {
+                color: "#8b8787"
+            }
+        }, {
+            featureType: "manmade",
+            elementType: "geometry",
+            stylers: {
+                color: "#1b1b1b"
+            }
+        }, {
+            featureType: "local",
+            elementType: "geometry",
+            stylers: {
+                lightness: -75,
+                saturation: -91
+            }
+        }, {
+            featureType: "subway",
+            elementType: "geometry",
+            stylers: {
+                lightness: -65
+            }
+        }, {
+            featureType: "railway",
+            elementType: "all",
+            stylers: {
+                lightness: -40
+            }
+        }, {
+            featureType: "poi",
+            elementType: "all",
+            stylers: {
+                visibility: "off"
+            }
+        }, {
+            featureType: "highway",
+            elementType: "labels.icon",
+            stylers: {
+                visibility: "off"
+            }
+        }]
+    });
+    // 设置个性化地图 最大缩放级别 18
+    map.setMaxZoom(18);
+    </script>
+	
+	
+  </body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>达邻-系统管理</title>
+    <!-- Bootstrap -->
+    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!-- bootstrap-wysiwyg -->
+    <link href="../vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+    <!-- Select2 -->
+    <link href="../vendors/select2/dist/css/select2.min.css" rel="stylesheet">
+    <!-- Switchery -->
+    <link href="../vendors/switchery/dist/switchery.min.css" rel="stylesheet">
+    <!-- starrr -->
+    <link href="../vendors/starrr/dist/starrr.css" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+    <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="../build/css/custom.min.css" rel="stylesheet">
+</head>
+
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="index.html" class="site_title"><img src="images\1.png" alt="">  <span>达邻</span></a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <!-- menu profile quick info -->
+                    <!-- /menu profile quick info -->
+                    <br />
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <!--<h3>General</h3>-->
+                <ul class="nav side-menu">
+                  <li><a  href="index.html"><i class="fa fa-home"></i> 首页 </a>
+                    <ul class="nav child_menu">
+                      
+                    </ul>
+                  </li>
+                  <li><a  href="businessManage.html"><i class="fa fa-home"></i> 商家管理 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="businessManage.html">商家信息管理</a></li>
+                      <li><a href="orderWithBusiness.html">商家订单管理</a></li>
+                      <li><a href="businessSettled.html">商家入驻申请</a></li>
+                      <li><a href="feedBackBusiness.html">商家反馈申请</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-edit"></i> 用户信息管理 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="systemManage.html">系统管理</a></li>
+                      <li><a href="userManage.html">用户管理</a></li>              
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-desktop"></i> 基本业务管理 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                          <li><a>订单管理<span class="fa fa-chevron-down"></span></a>
+                          <ul class="nav child_menu">
+                            <li class="sub_menu"><a href="orderUserThree.html">普通订单管理</a>
+                            </li>
+                            <li><a href="orderOnlySend.html">寄件订单管理</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li><a href="friendlyMessageManage.html">动态管理</a></li>
+                        <li><a href="groupPurchasingManage.html">团购管理</a></li> 
+                        <li><a href="recruitManage.html">招募管理</a></li> 
+                        <li><a href="postManage.html">跑腿人申请管理</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-table"></i> 反馈信息管理 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="feedBackUser.html">用户反馈管理</a></li>
+                      <li><a href="reportManage.html">报表管理</a></li>
+                      <li><a href="courierTrackManage.html">跑腿人轨迹管理</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-bar-chart-o"></i> 拓展模块 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="chargingRules.html">收费细则</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+                    <!-- /sidebar menu -->
+                    <!-- /menu footer buttons -->
+                    <div class="sidebar-footer hidden-small">
+                        <a data-toggle="tooltip" data-placement="top" title="Settings">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+              </a>
+                        <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+              </a>
+                        <a data-toggle="tooltip" data-placement="top" title="Lock">
+                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+              </a>
+                        <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+              </a>
+                    </div>
+                    <!-- /menu footer buttons -->
+                </div>
+            </div>
+            <!-- top navigation -->
+            <div class="top_nav">
+                <div class="nav_menu">
+                    <nav>
+                        <div class="nav toggle">
+                            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                        </div>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="">
+                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <img src="images/img.jpg" alt="">超级管理员
+                    <span class=" fa fa-angle-down"></span>
+                  </a>
+                                <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                    <li><a href="javascript:;"> Profile</a></li>
+                                    <li>
+                                        <a href="javascript:;">
+                        <span class="badge bg-red pull-right">50%</span>
+                        <span>Settings</span>
+                      </a>
+                                    </li>
+                                    <li><a href="javascript:;">Help</a></li>
+                                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                                </ul>
+                            </li>
+                            <li role="presentation" class="dropdown">
+                                <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-envelope-o"></i>
+                    <span class="badge bg-green"></span>
+                  </a>
+                                <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                                    <li>
+                                        <div class="text-center">
+                                            <a>
+                          <strong>暂无消息</strong>
+                          <i class="fa fa-angle-right"></i>
+                        </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- /top navigation -->
+            <!-- page content -->
+            <div class="right_col" role="main">
+                <div class="">
+                    <div class="page-title">
+                        <!-- <div class="title_right"> -->
+                        <!-- <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search"> -->
+                        <!-- <div class="input-group"> -->
+                        <!-- <input type="text" class="form-control" placeholder="Search for..."> -->
+                        <!-- <span class="input-group-btn"> -->
+                        <!-- <button class="btn btn-default" type="button">Go!</button> -->
+                        <!-- </span> -->
+                        <!-- </div> -->
+                        <!-- </div> -->
+                        <!-- </div> -->
+                    </div>
+                    <div class="clearfix"></div>
+                    <div id="content">
+                        <div id="content-header">
+                            <h2>管理员添加</h2>
+                        </div>
+                        <br>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="x_panel">
+                                <br>
+                                <!--表单-->
+                                <form class="form-horizontal" role="form">
+                                    <div class="form-group">
+                                        <label for="userName" class="col-sm-4 control-label">管理员账号</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" id="userName" placeholder="请输入管理员账号" style="width: 300px;margin-left: 20px">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password" class="col-sm-4 control-label">管理员密码</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" id="password" placeholder="请输入管理员密码" style="width: 300px;margin-left: 20px">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tel" class="col-sm-4 control-label">管理员电话</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" id="tel" placeholder="请输入管理员电话" style="width: 300px;margin-left: 20px">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="firstname" class="col-sm-4 control-label">管理员类型</label>
+                                        <div class="col-sm-8">
+                                            <div class="checkbox" style="margin-left: 20px">
+                                                <label>
+	                                                <input type="radio" name="type" value="1">超级管理员
+	                                            </label>
+	                                            <label>
+	                                                <input type="radio" name="type" checked="" value="0">普通管理员
+	                                            </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-4 col-sm-8">
+                                            <br>
+											<button type="button" class="btn btn-primary" onclick=modify() style="width: 80px;margin-left: 20px"> 确认</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!--表单结束-->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /page content -->
+                    <!-- footer content -->
+                    <!-- /footer content -->
+                </div>
+            </div>
+        </div>
+        <!-- jQuery -->
+        <script src="../vendors/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- FastClick -->
+        <script src="../vendors/fastclick/lib/fastclick.js"></script>
+        <!-- NProgress -->
+        <script src="../vendors/nprogress/nprogress.js"></script>
+        <!-- bootstrap-progressbar -->
+        <script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+        <!-- iCheck -->
+        <script src="../vendors/iCheck/icheck.min.js"></script>
+        <!-- bootstrap-daterangepicker -->
+        <script src="../vendors/moment/min/moment.min.js"></script>
+        <script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+        <!-- bootstrap-wysiwyg -->
+        <script src="../vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+        <script src="../vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
+        <script src="../vendors/google-code-prettify/src/prettify.js"></script>
+        <!-- jQuery Tags Input -->
+        <script src="../vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
+        <!-- Switchery -->
+        <script src="../vendors/switchery/dist/switchery.min.js"></script>
+        <!-- Select2 -->
+        <script src="../vendors/select2/dist/js/select2.full.min.js"></script>
+        <!-- Parsley -->
+        <script src="../vendors/parsleyjs/dist/parsley.min.js"></script>
+        <!-- Autosize -->
+        <script src="../vendors/autosize/dist/autosize.min.js"></script>
+        <!-- jQuery autocomplete -->
+        <script src="../vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
+        <!-- starrr -->
+        <script src="../vendors/starrr/dist/starrr.js"></script>
+        <!-- Custom Theme Scripts -->
+        <script src="../build/js/custom.min.js"></script>
+        <!-- bootstrap-table -->
+        <script src="js/bootstrap-table/bootstrap-table.min.js"></script>
+        <script src="js/bootstrap-table/bootstrap-table-zh-CN.min.js"></script>
+        <!-- bootstrap-table.css -->
+        <link href="js/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+        <script type="text/javascript">
+       
+        //确认添加
+        function modify() {
+			$.ajax({
+				type: "POST",
+				url: "manager-addManager",
+				contentType: "application/x-www-form-urlencoded",
+				data:{"pri":$('input:radio:checked').val(), "tel":$("#tel").val(), "userName":$("#userName").val(), "password":$("#password").val()},
+				success:function(msg){
+		            window.location.href = 'systemManage.html';
+		        }
+			});  
+        }
+        </script>
+</body>
+
+</html>

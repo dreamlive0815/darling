@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>达邻-商家管理 </title>
+
+    <!-- Bootstrap -->
+    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    
+    <!-- Custom Theme Style -->
+    <link href="../build/css/custom.min.css" rel="stylesheet">
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="index.html" class="site_title"><img src="images\1.png" alt=""> <span>达邻</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+          
+            <!-- /menu profile quick info -->
+
+            <br />
+
+                 <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <!--<h3>General</h3>-->
+                <ul class="nav side-menu">
+                  <li><a  href="index.html"><i class="fa fa-home"></i> 首页 </a>
+                    <ul class="nav child_menu">
+                      
+                    </ul>
+                  </li>
+                  <li><a  href="businessManage.html"><i class="fa fa-home"></i> 商家管理 </a>
+                    <ul class="nav child_menu">
+                      <li><a href="businessManage.html">商家信息管理</a></li>
+                      <li><a href="orderWithBusiness.html">商家订单管理</a></li>
+                      <li><a href="businessSettled.html">商家入驻申请</a></li>
+                      <li><a href="feedBackBusiness.html">商家反馈申请</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-edit"></i> 用户信息管理 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="systemManage.html">系统管理</a></li>
+                      <li><a href="userManage.html">用户管理</a></li>              
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-desktop"></i> 基本业务管理 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                          <li><a>订单管理<span class="fa fa-chevron-down"></span></a>
+                          <ul class="nav child_menu">
+                            <li class="sub_menu"><a href="orderUserThree.html">普通订单管理</a>
+                            </li>
+                            <li><a href="orderOnlySend.html">寄件订单管理</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li><a href="friendlyMessageManage.html">动态管理</a></li>
+                        <li><a href="groupPurchasingManage.html">团购管理</a></li> 
+                        <li><a href="recruitManage.html">招募管理</a></li> 
+                        <li><a href="postManage.html">跑腿人申请管理</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-table"></i> 反馈信息管理 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="feedBackUser.html">用户反馈管理</a></li>
+                      <li><a href="reportManage.html">报表管理</a></li>
+                      <li><a href="courierTrackManage.html">跑腿人轨迹管理</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-bar-chart-o"></i> 拓展模块 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="chargingRules.html">收费细则</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+            <div class="sidebar-footer hidden-small">
+              <a data-toggle="tooltip" data-placement="top" title="Settings">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Lock">
+                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+              </a>
+            </div>
+            <!-- /menu footer buttons -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+          <div class="nav_menu">
+            <nav>
+              <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+              </div>
+
+              <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <img src="images/img.jpg" alt="">超级管理员
+                    <span class=" fa fa-angle-down"></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-usermenu pull-right">
+                    <li><a href="javascript:;"> Profile</a></li>
+                    <li>
+                      <a href="javascript:;">
+                        <span class="badge bg-red pull-right">50%</span>
+                        <span>Settings</span>
+                      </a>
+                    </li>
+                    <li><a href="javascript:;">Help</a></li>
+                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                  </ul>
+                </li>
+
+                <li role="presentation" class="dropdown">
+                  <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-envelope-o"></i>
+                    <span class="badge bg-green"></span>
+                  </a>
+          <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                    <li>
+                      <div class="text-center">
+                        <a>
+                          <strong>暂无消息</strong>
+                          <i class="fa fa-angle-right"></i>
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- /top navigation -->
+        
+ 		<!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              
+
+              <!-- <div class="title_right"> -->
+                <!-- <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search"> -->
+                  <!-- <div class="input-group"> -->
+                    <!-- <input type="text" class="form-control" placeholder="Search for..."> -->
+                    <!-- <span class="input-group-btn"> -->
+                      <!-- <button class="btn btn-default" type="button">Go!</button> -->
+                    <!-- </span> -->
+                  <!-- </div> -->
+                <!-- </div> -->
+              <!-- </div> -->
+            </div>
+            <div class="clearfix"></div>
+           
+		   
+		   <div id="content">
+				<div id="content-header">
+					<h1>商家管理</h1>
+				</div>
+				<!--分页数据列表 -->
+				<div class="widget-box">
+				<!-- 数据表格表头-->
+					<div class="widget-title" >
+						<span class="icon"><i class="icon-th"></i></span>  
+						<div style="text-align:right;">
+							<!-- 搜索按钮 -->
+							<button  id = "btnsearch"  type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">  
+								<span class="glyphicon glyphicon-search"><i class="icon-search"></i></span> Search
+							</button> 
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<div class="x_panel">
+						<div class="x_title">
+							<h2>商家列表</h2>
+								<ul class="nav navbar-right panel_toolbox">
+							  		<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+							  		</li>
+							  		<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+										<ul class="dropdown-menu" role="menu">
+									  	<li><a href="#">Settings 1</a>
+									  	</li>
+									  	<li><a href="#">Settings 2</a>
+									  	</li>
+										</ul>
+							  		</li>
+							  		<li><a class="close-link"><i class="fa fa-close"></i></a>
+							  		</li>
+								</ul>
+							<div class="clearfix"></div>
+						
+							<!-- 表格 -->
+							<div class="widget-content nopadding">
+								<table class="table table-bordered "  style="font-size:13px" id ="test">
+									<thead>
+										<tr>
+											
+										</tr>
+									</thead>
+								</table>
+							</div>
+							<!-- /表格 -->
+					  	</div>
+					</div>
+              	</div>
+				
+			</div>
+		   
+          </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+      
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="../vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="../vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="../vendors/nprogress/nprogress.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <!-- iCheck -->
+    <script src="../vendors/iCheck/icheck.min.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="../vendors/moment/min/moment.min.js"></script>
+    <script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <!-- bootstrap-wysiwyg -->
+    <script src="../vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+    <script src="../vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
+    <script src="../vendors/google-code-prettify/src/prettify.js"></script>
+    <!-- jQuery Tags Input -->
+    <script src="../vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
+    <!-- Switchery -->
+    <script src="../vendors/switchery/dist/switchery.min.js"></script>
+    <!-- Select2 -->
+    <script src="../vendors/select2/dist/js/select2.full.min.js"></script>
+    <!-- Parsley -->
+    <script src="../vendors/parsleyjs/dist/parsley.min.js"></script>
+    <!-- Autosize -->
+    <script src="../vendors/autosize/dist/autosize.min.js"></script>
+    <!-- jQuery autocomplete -->
+    <script src="../vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
+    <!-- starrr -->
+    <script src="../vendors/starrr/dist/starrr.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="../build/js/custom.min.js"></script>
+	
+	
+	<!-- bootstrap-table -->
+	<script src="js/bootstrap-table/bootstrap-table.min.js"></script>
+	<script src="js/bootstrap-table/bootstrap-table-zh-CN.min.js"></script>
+	<!-- bootstrap-table.css -->
+	<link href="js/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+	
+	<script type="text/javascript">
+	$(function(){
+		$('#test').bootstrapTable({
+    		//请求方法
+    	   method: 'post',
+    	    //是否显示行间隔色
+    	   striped: true,
+    	   //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）     
+    	   cache: false, 
+    	   contentType:"application/x-www-form-urlencoded; charset=UTF-8",
+    	   //是否显示分页（*）  
+    	   pagination: true,   
+    	    //是否启用排序  
+    	   sortable: false,
+    	   //是否显示刷新按钮 
+     	  //传递参数                 
+    	  //传递参数
+    	   //初始化加载第一页，默认第一页
+    	   //我设置了这一项，但是貌似没起作用，而且我这默认是0,- -
+    	   pageNumber:1,   
+    	   //每页的记录行数（*）   
+    	   pageSize: 10,  
+    	   //可供选择的每页的行数（*）    
+    	   pageList: [5,10,15,20,30],
+    	   //这个接口需要处理bootstrap table传递的固定参数,并返回特定格式的json数据  
+    	   url: '/SimpleDelivery/business-getAllBusinessPage',
+    	   //默认值为 'limit',传11给服务端的参数为：limit, offset, search, sort, order Else
+    	   //queryParamsType:'',   
+    	   //分页方式：client客户端分页，server服务端分页（*）
+    	   sidePagination: "server",
+    	   //Indicate which field is an identity field.
+    	  
+    	   queryParams: queryParams,
+    	 //minimunCountColumns: 2,
+    	   columns: [{ //编辑datagrid的列
+    			title : '序号',
+    			align : 'center',
+    			checkbox : true
+    		}, {
+    			field : 'id',
+    			title : '商家ID',
+    			width : 80
+    		}, {
+    			field : 'userName',
+    			title : '商家帐号',
+    			width : 80,
+    		},{
+    			field : 'password',
+    			title : '商家密码',
+    			width : 80
+    		}, {
+    			field : 'nickName',
+    			title : '商家店名',
+    			width : 80,
+    		}, {
+    			field : 'address',
+    			title : '商家地址',
+    			width : 80,
+    		}, {
+    			field : 'telephone',
+    			title : '联系电话',
+    			width : 80,
+    		}, {
+    			field : 'introduction',
+    			title : '商家简介',
+    			width : 80 ,
+    		}, {
+    			field: 'operate',
+    			title: '操作',
+    			align: 'center',
+    			width : 100,
+    			events: operateEvents,
+    			formatter: operateFormatter
+    			}],
+    	   pagination:true
+    	});
+	});
+	
+	
+	
+	
+	
+	</script>
+	<script>
+		window.operateEvents = {
+			'click .RoleOfdelete': function (e, value, row, index) {
+				alert(row.dno);            
+		 },
+			'click .RoleOfedit': function (e, value, row, index) {
+				$("#editModal").modal('show');
+			}
+		};
+	
+	
+		//添加按钮
+		function operateFormatter(value, row, index) {
+			return [
+			'<button type="button" class="RoleOfdelete btn btn-primary  btn-sm" style="margin-right:15px;">删除</button>',
+		  
+			'<button type="button" class="RoleOfedit btn btn-primary  btn-sm" style="margin-right:15px;">修改</button>'
+			].join('');
+		 }
+	</script>
+	<script type="text/javascript">
+		//传递的参数
+		function queryParams(params) {
+			return {
+			pageSize: params.limit,
+			pageNumber:params.offset/params.limit +1,
+			};
+		}
+		
+	</script>
+	
+  </body>
+</html>

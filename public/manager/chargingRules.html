@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>达邻-收费细则</title>
+    <!-- Bootstrap -->
+    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="../build/css/custom.min.css" rel="stylesheet">    
+
+</head>
+
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="index.html" class="site_title"><img src="images\1.png" alt="">  <span>达邻</span></a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <br />
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <!--<h3>General</h3>-->
+                <ul class="nav side-menu">
+                  <li><a  href="index.html"><i class="fa fa-home"></i> 首页 </a>
+                    <ul class="nav child_menu">
+                      
+                    </ul>
+                  </li>
+                  <li><a  href="businessManage.html"><i class="fa fa-home"></i> 商家管理 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="businessManage.html">商家信息管理</a></li>
+                      <li><a href="orderWithBusiness.html">商家订单管理</a></li>
+                      <li><a href="businessSettled.html">商家入驻申请</a></li>
+                      <li><a href="feedBackBusiness.html">商家反馈申请</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-edit"></i> 用户信息管理 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="systemManage.html">系统管理</a></li>
+                      <li><a href="userManage.html">用户管理</a></li>              
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-desktop"></i> 基本业务管理 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                          <li><a>订单管理<span class="fa fa-chevron-down"></span></a>
+                          <ul class="nav child_menu">
+                            <li class="sub_menu"><a href="orderUserThree.html">普通订单管理</a>
+                            </li>
+                            <li><a href="orderOnlySend.html">寄件订单管理</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li><a href="friendlyMessageManage.html">动态管理</a></li>
+                        <li><a href="groupPurchasingManage.html">团购管理</a></li> 
+                        <li><a href="recruitManage.html">招募管理</a></li> 
+                        <li><a href="postManage.html">跑腿人申请管理</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-table"></i> 反馈信息管理 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="feedBackUser.html">用户反馈管理</a></li>
+                      <li><a href="reportManage.html">报表管理</a></li>
+                      <li><a href="courierTrackManage.html">跑腿人轨迹管理</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-bar-chart-o"></i> 拓展模块 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="chargingRules.html">收费细则</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+                    <!-- /sidebar menu -->
+                </div>
+            </div>
+            <!-- top navigation -->
+            <div class="top_nav">
+                <div class="nav_menu">
+                    <nav>
+                        <div class="nav toggle">
+                            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                        </div>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="">
+                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <img src="images/img.jpg" alt="">超级管理员
+                    <span class=" fa fa-angle-down"></span>
+                  </a>
+                                <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                    <li><a href="javascript:;"> Profile</a></li>
+                                    <li>
+                                        <a href="javascript:;">
+                        <span class="badge bg-red pull-right">50%</span>
+                        <span>Settings</span>
+                      </a>
+                                    </li>
+                                    <li><a href="javascript:;">Help</a></li>
+                                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                                </ul>
+                            </li>
+                            <li role="presentation" class="dropdown">
+                                <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-envelope-o"></i>
+                    <span class="badge bg-green"></span>
+                  </a>
+                                <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                                    <li>
+                                        <div class="text-center">
+                                            <a>
+                          <strong>暂无消息</strong>
+                          <i class="fa fa-angle-right"></i>
+                        </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- top navigation -->
+            <!-- page content -->
+            <div class="right_col" role="main">
+                <div class="page-title">
+                    <div class="title_left">
+                        <h3>收费细则</h3>
+                        <br>
+                    </div>
+                    <!--里程收费规则-->
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="x_panel">
+               
+                            <label>里程收费规则</label>
+
+                                <div class="form-group">
+                                     <div class="col-sm-3">
+                                    <label style="margin-left : 180px">2公里：</label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <label id="first">8.0</label>  <label>元</label>
+                                </div>
+                                </div>
+                               <div class="form-group">
+                                     <div class="col-sm-3">
+                                    <label style="margin-left : 180px">3公里：</label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <label id="second">12.0</label>  <label>元</label>
+                                </div>
+                                </div>
+                                <div class="form-group">
+                                     <div class="col-sm-3">
+                                    <label style="margin-left : 160px">3-10公里：</label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <label id="third">1.0</label>  <label>元/公里</label>
+                                </div>
+                                </div>
+                               <div class="form-group">
+                                     <div class="col-sm-3">
+                                    <label style="margin-left : 155px">10-30公里：</label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <label id="fourth">1.0</label>  <label>元/公里</label>
+                                </div>
+                                </div>
+                                  <div class="form-group">
+                                     <div class="col-sm-3">
+                                    <label style="margin-left : 150px">超出30公里：</label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <label id="fifth">3.0</label>  <label>元/公里</label>
+                                </div>
+                                </div>                  
+                            </div>
+                        </div>
+                        <!--里程收费规则-->
+
+                        <!--帮送收费规则-->
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="x_panel">
+               
+                            <label>帮送收费规则</label>
+
+                                <div class="form-group">
+                                     <div class="col-sm-3">
+                                    <label style="margin-left : 170px">0-5公斤：</label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <label id="sixth">0.0</label>  <label>元（物品重量）</label>
+                                </div>
+                                </div>
+                               <div class="form-group">
+                                     <div class="col-sm-3">
+                                    <label style="margin-left : 155px">2-100公斤：</label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <label id="seventh">2.0</label>  <label>元/公斤（物品重量）</label>
+                                </div>
+                                </div>
+
+                                
+                            </div>
+                        </div>
+                            <!--帮送收费规则-->
+
+                             <!--夜间收费规则-->
+                               <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="x_panel">
+               
+                            <label>夜间收费规则<small><small><font color="#FF0000">（额外增加）</font></small></small></label>
+
+                                <div class="form-group">
+                                     <div class="col-sm-3">
+                                    <label style="margin-left : 145px">22:00-00:00：</label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <label id="eighth">5</label>  <label>元/单</label>
+                                </div>
+                                </div>
+                               <div class="form-group">
+                                     <div class="col-sm-3">
+                                    <label style="margin-left : 145px">00:00-07:00：</label>
+                                </div>
+                                <div class="col-sm-9">
+                                     <label id="ninth">10</label>  <label>元/单</label>
+                                </div>
+                                </div>                                
+                            </div>
+                        </div>
+                            <!--夜间收费规则-->
+                            <div class="col-sm-offset-11 col-sm-1">
+                                <button type="button" onclick=cli() class="btn btn-primary"> 修改</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- page content -->
+
+               <!--modify content -->
+                <div class="modal fade" id="modify" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            </div>                           
+                        <form class="form-horizontal" role="form">
+                                <br>
+                                &nbsp;
+                                <label>里程收费规则</label>
+
+                                <div class="form-group">
+                                <div class="col-sm-4">
+                                         <label style="margin-left: 140px">2公里</label>
+                                         </div>
+                                    <div class="col-sm-8">
+                                        <input type="text" name="" placeholder="8" id="first1"><label> 元</label>
+                                    </div>
+                                </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-4">
+                                         <label style="margin-left: 140px">3公里</label>
+                                         </div>
+                                    <div class="col-sm-8">
+                                        <input type="text" name="" placeholder="12" id="second1"><label> 元</label>
+                                    </div>
+                                </div>
+
+                             <div class="form-group">
+                                <div class="col-sm-4">
+                                         <label style="margin-left: 125px">3-10公里</label>
+                                         </div>
+                                    <div class="col-sm-8">
+                                        <input type="text" name="" placeholder="1.0" id="third1"><label> 元/公里</label>
+                                    </div>
+                                </div>
+
+                               <div class="form-group">
+                                <div class="col-sm-4">
+                                         <label style="margin-left: 115px">10-30公里</label>
+                                         </div>
+                                    <div class="col-sm-8">
+                                      <input type="text" name="" placeholder="1.0" id="fourth1"><label> 元/公里</label>
+                                    </div>
+                                </div>
+
+                          <div class="form-group">
+                                <div class="col-sm-4">
+                                         <label style="margin-left: 108px">超出30公里</label>
+                                         </div>
+                                    <div class="col-sm-8">
+                                      <input type="text" name="" placeholder="1.0" id="fifth1"><label> 元/公里</label>
+                                    </div>
+                                </div>
+
+                      &nbsp;&nbsp;<label>帮送收费规则</label>
+
+                       <div class="form-group">
+                                <div class="col-sm-4">
+                                         <label style="margin-left: 130px">0-5公斤</label>
+                                         </div>
+                                    <div class="col-sm-8">
+                                       <input type="text" name="" placeholder="0.0" id="sixth1"><label> 元（物品重量）</label>
+                                    </div>
+                                </div>
+
+                                 <div class="form-group">
+                                <div class="col-sm-4">
+                                         <label style="margin-left: 115px">5-100公斤</label>
+                                         </div>
+                                    <div class="col-sm-8">
+                                       <input type="text" name="" placeholder="2.0" id="seventh1"><label> 元/公斤（物品重量）</label>
+                                    </div>
+                                </div>
+
+
+                                &nbsp;&nbsp;<label>夜间收费规则<small><small><font color="#FF0000">（额外增加）</font></small></small></label>
+
+                       <div class="form-group">
+                                <div class="col-sm-4">
+                                         <label style="margin-left: 105px">22:00-00:00</label>
+                                         </div>
+                                    <div class="col-sm-8">
+                                       <input type="text" name="" placeholder="每单加5元" id="eighth1">  <label>元/单</label>
+                                    </div>
+                                </div>
+
+                                 <div class="form-group">
+                                <div class="col-sm-4">
+                                         <label style="margin-left: 105px">00:00-07:00</label>
+                                         </div>
+                                    <div class="col-sm-8">
+                                       <input type="text" name="" placeholder="每单加10元" id="ninth1">  <label>元/单</label>
+                                    </div>
+                                </div>
+
+                    
+     </form>
+                            <br>
+                            <div class="modal-footer" style="border-top:none;">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                <button type="button" class="btn btn-primary" onclick=modify()> 确认修改</button>
+                            </div>
+                            </div>
+                      </div>
+          </div>
+        <!--modify content -->
+
+            <!-- footer content -->
+            <!-- footer content -->
+            <!-- jQuery -->
+            <script src="../vendors/jquery/dist/jquery.min.js"></script>
+            <!-- Bootstrap -->
+            <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+            <!-- FastClick -->
+            <script src="../vendors/fastclick/lib/fastclick.js"></script>
+            <!-- NProgress -->
+            <script src="../vendors/nprogress/nprogress.js"></script>
+            <!-- Chart.js -->
+            <script src="../vendors/Chart.js/dist/Chart.min.js"></script>
+            <!-- Custom Theme Scripts -->
+            <script src="../build/js/custom.min.js"></script>
+			<script type="text/javascript">
+				//传递的参数
+				function cli() {
+					$("#first1").val($("#first").html())
+					$("#second1").val($("#second").html())
+					$("#third1").val($("#third").html())
+					$("#fourth1").val($("#fourth").html())
+					$("#fifth1").val($("#fifth").html())
+					$("#sixth1").val($("#sixth").html())
+					$("#seventh1").val($("#seventh").html())
+					$("#eighth1").val($("#eighth").html())
+					$("#ninth1").val($("#ninth").html())
+					$("#modify").modal('show')
+				}
+				function modify() {
+					$("#first").html($("#first1").val())
+					$("#second").html($("#second1").val())
+					$("#third").html($("#third1").val())
+					$("#fourth").html($("#fourth1").val())
+					$("#fifth").html($("#fifth1").val())
+					$("#sixth").html($("#sixth1").val())
+					$("#seventh").html($("#seventh1").val())
+					$("#eighth").html($("#eighth1").val())
+					$("#ninth").html($("#ninth1").val())
+					$("#modify").modal('hide')
+				}
+				
+			</script>
+	</body>
+
+</html>
