@@ -16,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         DB::listen(function ($query) {
-            //echo $query->sql . "\n";
+            ////echo $query->sql . "\n";
         });
         Relation::morphMap([
             'user' => \App\User::class,

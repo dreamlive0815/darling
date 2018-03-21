@@ -53,6 +53,20 @@ return [
             'engine' => null,
         ],
 
+        'mysql_bak' => [
+            'driver' => 'mysql',
+            'host' => env('DB_HOST', '127.0.0.1'),
+            'port' => env('DB_PORT', '3306'),
+            'database' => 'SimpleDelivery',
+            'username' => env('DB_USERNAME', 'root'),
+            'password' => env('DB_PASSWORD', 'kirisame'),
+            'charset' => 'utf8',
+            'collation' => 'utf8_general_ci',
+            'prefix' => '',
+            'strict' => true,
+            'engine' => null,
+        ],
+
         'pgsql' => [
             'driver' => 'pgsql',
             'host' => env('DB_HOST', '127.0.0.1'),
