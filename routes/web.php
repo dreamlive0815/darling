@@ -37,7 +37,7 @@ Route::get('/my', function () {
 });
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('manager/login.html');
 });
 
 Route::get('/token', function () {

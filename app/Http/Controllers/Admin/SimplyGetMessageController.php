@@ -7,10 +7,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
-use App\Model\DL\User;
 use App\Model\DL\Business;
+use App\Model\DL\User;
 use App\Model\DL\Manager;
 use App\Model\DL\FeedBackBusiness;
+use App\Model\DL\FeedBackUser;
 use App\Model\DL\OrderWithBusiness;
 use App\Model\DL\OrderOnlySend;
 use App\Model\DL\OrderUserThree;
@@ -127,11 +128,9 @@ class SimplyGetMessageController extends Controller
         return User::where('IS_DELIVERY', '>', '0');
     }
 
-    
-
-    
-
-    
-
+    protected function feedBackUser_getAllPage()
+    {
+        return FeedBackUser::whereNotNull('FEEDBACK_USER_ID');
+    }
 
 }
