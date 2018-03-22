@@ -14,8 +14,9 @@ use App\Model\DL\FeedBackBusiness;
 use App\Model\DL\OrderWithBusiness;
 use App\Model\DL\OrderOnlySend;
 use App\Model\DL\OrderUserThree;
-
-
+use App\Model\DL\GroupPurchasing;
+use App\Model\DL\FriendlyMessage;
+use App\Model\DL\Recruit;
 
 class SimplyGetMessageController extends Controller
 {
@@ -105,6 +106,28 @@ class SimplyGetMessageController extends Controller
     {
         return OrderOnlySend::whereNotNull('ORDER_ONLY_SEND_ID');
     }
+
+    protected function groupPurchasing_getAllPage()
+    {
+        return GroupPurchasing::whereNotNull('GROUP_PURCHASING_ID');
+    }
+
+    protected function friendlyMessage_getAllPage()
+    {
+        return FriendlyMessage::whereNotNull('FRIENDLY_MESSAGE_ID');
+    }
+    
+    protected function recruit_getAllPage()
+    {
+        return Recruit::whereNotNull('RECRUIT_ID');
+    }
+
+    protected function user_getAllPagePost()
+    {
+        return User::where('IS_DELIVERY', '>', '0');
+    }
+
+    
 
     
 
