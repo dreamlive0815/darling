@@ -1,5 +1,7 @@
 php artisan clear-compiled
 php artisan optimize
 
+composer dump-autoload --optimize
+
 php artisan make:migration name
 php artisan make:seeder name
