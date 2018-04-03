@@ -22,6 +22,10 @@ use App\Model\DL\Recruit;
 class SimplyGetMessageController extends Controller
 {
 
+    protected $updateRoutes = [
+        'manager_deleteById'
+    ];
+
     public function __construct()
     {
         
@@ -45,6 +49,7 @@ class SimplyGetMessageController extends Controller
 
         $type = str_replace('-', '_', $type);
         if(!method_exists($this, $type)) return '';
+        if(in_array($type, $this->updateRoutes)) return $this->$type($request);
         $query = $this->$type();
         $count = $query->count();
         $this->limitaion($request, $query);
@@ -58,6 +63,14 @@ class SimplyGetMessageController extends Controller
             'total' => $count,
             'rows' => $container,
         ];
+    }
+
+    protected function manager_deleteById(Request $request)
+    {
+        $id = $request->input('id');
+        $manager = Manager::find($id);
+        if(!empty($manager)) $manager->delete();
+        return redirect(url('/manager/systemManage.html'));
     }
 
     protected function limitaion($request, $query)

@@ -27,7 +27,8 @@ class RouteServiceProvider extends ServiceProvider
 
         parent::boot();
         
-        Route::any('SimpleDelivery/{type}', 'App\Http\Controllers\Admin\SimplyGetMessageController@handle');
+        Route::any('/SimpleDelivery/{type}', 'App\Http\Controllers\Admin\SimplyGetMessageController@handle');
+        Route::any('/manager/{type}', 'App\Http\Controllers\Admin\SimplyUpdateMessageController@handle');
     }
 
     /**

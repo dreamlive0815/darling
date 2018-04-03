@@ -9,6 +9,8 @@ class Manager extends Base
     protected $table = 'SYSTEM_MANAGER';
     protected $primaryKey = 'STSTEM_MANANGER_ID';
 
+    protected $fillable = ['USERNAME', 'PASSWORD', 'TELEPHONE', 'PRIVILEGES', 'STATE'];
+
     public function toArr()
     {
         return [
