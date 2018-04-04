@@ -7,7 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Business extends Base
 {
     protected $table = 'BUSINESS';
-    protected $primaryKey = 'BUSINESS_ID';
+	protected $primaryKey = 'BUSINESS_ID';
+	
+	protected $fillable = ['STATE'];
 
     public function toArr()
     {

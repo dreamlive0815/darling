@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use App\Model\DL\Business;
 use App\Model\DL\Manager;
 
 class SimplyUpdateMessageController extends Controller
@@ -38,6 +39,21 @@ class SimplyUpdateMessageController extends Controller
         } else {
             $manager->fill($fills);
             $manager->save();
+        }
+        
+        return 'null';
+    }
+
+    protected function business_modifyBusinessState(Request $request)
+    {
+        $id = $request->input('id');
+        $business = Business::find($id);
+        $fills = [
+            'STATE' => $request->input('state'),
+        ];
+        if(!empty($business)) {
+            $business->fill($fills);
+            $business->save();
         }
         
         return 'null';
